@@ -31,7 +31,7 @@ export function Welcome({ message }: { message: string }) {
 	const socialLinks = [
 		{ label: "GitHub", href: "https://github.com/fornubi" },
 		{ label: "LinkedIn", href: "https://www.linkedin.com/" },
-		{ label: "Email", href: "mailto:fornubi.dev@gmail.com" },
+		{ label: "Email", href: "mailto:dev@fornubi.my.id" },
 	];
 
 	const highlights = [
@@ -198,7 +198,7 @@ export function Welcome({ message }: { message: string }) {
 						</div>
 						<div className="flex flex-wrap gap-3">
 							<a className="rounded-full bg-sky-400 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-sky-300" href="/cv.pdf" target="_blank" rel="noreferrer">Download CV</a>
-							<a className="rounded-full border border-slate-700 px-5 py-3 text-sm font-semibold text-slate-100 hover:bg-slate-800" href="mailto:fornubi.dev@gmail.com">fornubi.dev@gmail.com</a>
+							<a className="rounded-full border border-slate-700 px-5 py-3 text-sm font-semibold text-slate-100 hover:bg-slate-800" href="mailto:dev@fornubi.my.id">dev@fornubi.my.id</a>
 						</div>
 					</div>
 					<div className="mt-4 flex flex-wrap gap-3">
