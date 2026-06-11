@@ -1,90 +1,209 @@
-import logoDark from "./logo-dark.svg";
-import logoLight from "./logo-light.svg";
-
 export function Welcome({ message }: { message: string }) {
+	const featuredProjects = [
+		{
+			title: "Inventory Desk",
+			tag: "Web App",
+			description: "Sistem inventori dan laporan stok dengan dashboard real-time untuk tim operasional.",
+			accent: "from-sky-500 to-blue-600",
+			tech: ["React", "TypeScript", "Tailwind"],
+		},
+		{
+			title: "POS Mobile Lite",
+			tag: "Mobile App",
+			description: "Aplikasi kasir mobile dengan alur transaksi cepat, offline-ready, dan laporan harian.",
+			accent: "from-slate-600 to-slate-800",
+			tech: ["Flutter", "SQLite", "Firebase"],
+		},
+		{
+			title: "DeskFlow Admin",
+			tag: "Desktop App",
+			description: "Dashboard administrasi desktop untuk manajemen user, role, dan aktivitas internal.",
+			accent: "from-cyan-500 to-indigo-600",
+			tech: ["Tauri", "Rust", "React"],
+		},
+	];
+
+	const stackPills = ["React", "Next.js", "TypeScript", "Flutter", "Tauri", "Node.js", "Tailwind", "Firebase"];
+
+	const socialLinks = [
+		{ label: "GitHub", href: "https://github.com/fornubi" },
+		{ label: "LinkedIn", href: "https://www.linkedin.com/" },
+		{ label: "Email", href: "mailto:fornubi.dev@gmail.com" },
+	];
+
+	const highlights = [
+		"Desain landing page yang clean dan fokus pada pesan utama",
+		"Gallery portofolio responsif untuk menampilkan karya secara rapi",
+		"Tema light & dark mode dengan palette grey dan blue yang modern",
+	];
+
+	const projectManagement = [
+		"Planning & scope project",
+		"UI/UX design dan prototype",
+		"Development, testing, dan deployment",
+		"Maintenance dan update berkala",
+	];
+
+	const projectSteps = [
+		{ step: "01", title: "Brief", text: "Mengidentifikasi kebutuhan bisnis, target audiens, dan tujuan utama aplikasi." },
+		{ step: "02", title: "Build", text: "Membangun antarmuka dan fitur dengan arsitektur yang rapi dan scalable." },
+		{ step: "03", title: "Launch", text: "Menguji performa, keamanan, dan kesiapan publish untuk hasil yang stabil." },
+	];
+
 	return (
-		<main className="flex items-center justify-center pt-16 pb-4">
-			<div className="flex-1 flex flex-col items-center gap-16 min-h-0">
-				<header className="flex flex-col items-center gap-9">
-					<div className="w-[500px] max-w-[100vw] p-4">
-						<img
-							src={logoLight}
-							alt="React Router"
-							className="block w-full dark:hidden"
-						/>
-						<img
-							src={logoDark}
-							alt="React Router"
-							className="hidden w-full dark:block"
-						/>
+		<main className="min-h-screen bg-[linear-gradient(135deg,#f8fbff_0%,#eff4f9_45%,#f5f7fb_100%)] text-slate-900 dark:bg-[linear-gradient(135deg,#020617_0%,#0f172a_45%,#111827_100%)] dark:text-slate-100">
+			<section className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-6 py-8 lg:px-10 lg:py-10">
+				<header className="flex flex-wrap items-center justify-between gap-4 rounded-3xl border border-slate-200/80 bg-white/80 p-5 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-950/80">
+					<div>
+						<p className="text-sm uppercase tracking-[0.35em] text-sky-600 dark:text-sky-400">fornubi</p>
+						<h1 className="mt-1 text-2xl font-semibold text-slate-900 dark:text-white">Web, Mobile & Desktop Developer</h1>
 					</div>
+					<nav className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+						<a className="rounded-full px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-800" href="#portfolio">Portfolio</a>
+						<a className="rounded-full px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-800" href="#projects">Project</a>
+						<a className="rounded-full px-3 py-2 hover:bg-slate-100 dark:hover:bg-slate-800" href="#about">Tentang</a>
+						<a className="rounded-full bg-slate-900 px-4 py-2 text-white dark:bg-sky-500 dark:text-slate-950" href="#contact">Kontak</a>
+					</nav>
 				</header>
-				<div className="max-w-[300px] w-full space-y-6 px-4">
-					<nav className="rounded-3xl border border-gray-200 p-6 dark:border-gray-700 space-y-4">
-						<p className="leading-6 text-gray-700 dark:text-gray-200 text-center">
-							What&apos;s next?
-						</p>
-						<ul>
-							{resources.map(({ href, text, icon }) => (
-								<li key={href}>
-									<a
-										className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline dark:text-blue-500"
-										href={href}
-										target="_blank"
-										rel="noreferrer"
-									>
-										{icon}
-										{text}
-									</a>
+
+				<section className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+					<div className="space-y-6 rounded-3xl border border-slate-200/80 bg-white/90 p-8 shadow-xl shadow-slate-200/60 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90 dark:shadow-black/30">
+						<p className="inline-flex w-fit rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-sm text-sky-700 dark:border-sky-900 dark:bg-sky-950/60 dark:text-sky-200">Simple • Modern • Responsive</p>
+						<h2 className="max-w-xl text-4xl font-semibold tracking-tight text-slate-900 dark:text-white lg:text-5xl">Saya membangun pengalaman digital yang modern untuk web, mobile, dan desktop.</h2>
+						<p className="max-w-lg text-lg text-slate-600 dark:text-slate-300">fornubi adalah ruang portofolio saya sebagai developer yang fokus pada solusi aplikasi yang clean, cepat, dan siap dipakai oleh pengguna.</p>
+						<div className="flex flex-wrap gap-3">
+							<a className="rounded-full bg-slate-900 px-5 py-3 text-sm font-medium text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5 dark:bg-sky-400 dark:text-slate-950" href="/cv.pdf" target="_blank" rel="noreferrer">Download CV</a>
+							<a className="rounded-full border border-slate-300 px-5 py-3 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800" href="#contact">Hubungi Saya</a>
+						</div>
+					</div>
+
+					<aside className="grid gap-4 rounded-3xl border border-slate-200/80 bg-slate-900 p-6 text-slate-100 shadow-2xl shadow-slate-900/10 dark:border-slate-800 dark:bg-slate-950">
+						<div className="rounded-2xl border border-slate-800 bg-white/6 p-4">
+							<p className="text-sm text-slate-300">Impact</p>
+							<p className="mt-1 text-3xl font-semibold">3x</p>
+							<p className="text-sm text-slate-400">lebih cepat memahami value Anda dari halaman depan.</p>
+						</div>
+						<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+							<div className="rounded-2xl border border-slate-800 bg-slate-800/90 p-4">
+								<p className="text-sm text-slate-300">Focus</p>
+								<p className="mt-1 text-xl font-semibold">Clean layout</p>
+							</div>
+							<div className="rounded-2xl border border-slate-800 bg-slate-800/90 p-4">
+								<p className="text-sm text-slate-300">Mood</p>
+								<p className="mt-1 text-xl font-semibold">Grey + blue</p>
+							</div>
+						</div>
+					</aside>
+				</section>
+
+				<section id="about" className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+					<div className="rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
+						<p className="text-sm uppercase tracking-[0.35em] text-sky-600 dark:text-sky-400">Tentang</p>
+						<h3 className="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">Portofolio saya menampilkan hasil kerja yang rapi, modern, dan berorientasi pada pengguna.</h3>
+						<p className="mt-3 text-slate-600 dark:text-slate-300">Saya menggabungkan desain yang bersih dengan pengembangan yang praktis untuk menghadirkan produk web, mobile, dan desktop yang solid.</p>
+					</div>
+					<div className="grid gap-4 sm:grid-cols-3">
+						{highlights.map((item) => (
+							<div key={item} className="rounded-3xl border border-slate-200/80 bg-white/90 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-950/90">
+								<p className="text-slate-700 dark:text-slate-200">{item}</p>
+							</div>
+						))}
+					</div>
+				</section>
+
+				<section className="grid gap-6 lg:grid-cols-[1fr_1fr]">
+					<div className="rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
+						<p className="text-sm uppercase tracking-[0.35em] text-sky-600 dark:text-sky-400">Tech Stack</p>
+						<h3 className="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">Teknologi yang sering saya gunakan</h3>
+						<div className="mt-4 flex flex-wrap gap-2">
+							{stackPills.map((item) => (
+								<span key={item} className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-sm text-slate-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">{item}</span>
+							))}
+						</div>
+					</div>
+					<div className="rounded-3xl border border-slate-200/80 bg-slate-900 p-6 text-slate-100 shadow-xl shadow-slate-900/10 dark:border-slate-800 dark:bg-slate-950">
+						<p className="text-sm uppercase tracking-[0.35em] text-sky-300">Focus</p>
+						<h3 className="mt-2 text-2xl font-semibold">Layanan yang saya tawarkan</h3>
+						<ul className="mt-4 space-y-3 text-slate-200">
+							<li>• Web app modern dan dashboard bisnis</li>
+							<li>• Aplikasi mobile untuk startup dan usaha kecil</li>
+							<li>• Desktop app untuk kebutuhan internal dan admin</li>
+						</ul>
+					</div>
+				</section>
+
+				<section id="projects" className="grid gap-6 lg:grid-cols-[1fr_1fr]">
+					<div className="rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
+						<p className="text-sm uppercase tracking-[0.35em] text-sky-600 dark:text-sky-400">Project Management</p>
+						<h3 className="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">Alur kerja project yang rapi dan terukur</h3>
+						<ul className="mt-4 space-y-3 text-slate-600 dark:text-slate-300">
+							{projectManagement.map((item) => (
+								<li key={item} className="flex items-start gap-3 rounded-2xl border border-slate-200/80 bg-slate-50 p-3 dark:border-slate-800 dark:bg-slate-900/80">
+									<span className="mt-1 h-2.5 w-2.5 rounded-full bg-sky-500" />
+									<span>{item}</span>
 								</li>
 							))}
-							<li className="self-stretch p-3 leading-normal">{message}</li>
 						</ul>
-					</nav>
-				</div>
-			</div>
+					</div>
+					<div className="grid gap-4">
+						{projectSteps.map((item) => (
+							<article key={item.step} className="rounded-3xl border border-slate-200/80 bg-white/90 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-950/90">
+								<p className="text-xs uppercase tracking-[0.35em] text-sky-600 dark:text-sky-300">{item.step}</p>
+								<h4 className="mt-2 text-xl font-semibold text-slate-900 dark:text-white">{item.title}</h4>
+								<p className="mt-2 text-sm text-slate-600 dark:text-slate-300">{item.text}</p>
+							</article>
+						))}
+					</div>
+				</section>
+
+				<section id="portfolio" className="rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
+					<div className="mb-5 flex flex-wrap items-end justify-between gap-3">
+						<div>
+							<p className="text-sm uppercase tracking-[0.35em] text-sky-600 dark:text-sky-400">Gallery</p>
+							<h3 className="mt-1 text-2xl font-semibold text-slate-900 dark:text-white">Karya pilihan</h3>
+						</div>
+						<p className="max-w-xl text-sm text-slate-600 dark:text-slate-300">Contoh tampilan portfolio yang cocok untuk designer, freelancer, atau studio kreatif.</p>
+					</div>
+					<div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+						{featuredProjects.map((project) => (
+							<article key={project.title} className="overflow-hidden rounded-3xl border border-slate-200/80 bg-slate-50 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900/90">
+								<div className={`h-32 bg-gradient-to-r ${project.accent}`} />
+								<div className="p-5">
+									<p className="text-xs uppercase tracking-[0.35em] text-sky-600 dark:text-sky-300">{project.tag}</p>
+									<h4 className="mt-2 text-xl font-semibold text-slate-900 dark:text-white">{project.title}</h4>
+									<p className="mt-2 text-sm text-slate-600 dark:text-slate-300">{project.description}</p>
+									<div className="mt-4 flex flex-wrap gap-2">
+										{project.tech.map((item) => (
+											<span key={item} className="rounded-full bg-slate-200 px-2.5 py-1 text-xs font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-200">{item}</span>
+										))}
+									</div>
+								</div>
+							</article>
+						))}
+					</div>
+				</section>
+
+				<section id="contact" className="rounded-3xl border border-slate-200/80 bg-slate-900 p-6 text-slate-100 shadow-xl shadow-slate-900/10 dark:border-slate-800 dark:bg-slate-950">
+					<div className="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-center">
+						<div>
+							<p className="text-sm uppercase tracking-[0.35em] text-sky-300">Mulai</p>
+							<h3 className="mt-1 text-2xl font-semibold">Siap bekerja sama atau melihat portofolio saya?</h3>
+							<p className="mt-2 text-slate-300">Saya siap membantu membangun aplikasi web, mobile, dan desktop dengan alur project yang jelas, cepat, dan profesional.</p>
+						</div>
+						<div className="flex flex-wrap gap-3">
+							<a className="rounded-full bg-sky-400 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-sky-300" href="/cv.pdf" target="_blank" rel="noreferrer">Download CV</a>
+							<a className="rounded-full border border-slate-700 px-5 py-3 text-sm font-semibold text-slate-100 hover:bg-slate-800" href="mailto:fornubi.dev@gmail.com">fornubi.dev@gmail.com</a>
+						</div>
+					</div>
+					<div className="mt-4 flex flex-wrap gap-3">
+						{socialLinks.map((item) => (
+							<a key={item.label} className="rounded-full border border-slate-700 px-4 py-2 text-sm text-slate-100 hover:bg-slate-800" href={item.href} target="_blank" rel="noreferrer">{item.label}</a>
+						))}
+					</div>
+				</section>
+
+				<footer className="pb-8 text-center text-sm text-slate-500 dark:text-slate-400">{message || "Tema modern grey & blue, siap untuk light mode dan dark mode."}</footer>
+			</section>
 		</main>
 	);
 }
-
-const resources = [
-	{
-		href: "https://reactrouter.com/docs",
-		text: "React Router Docs",
-		icon: (
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="24"
-				height="20"
-				viewBox="0 0 20 20"
-				fill="none"
-				className="stroke-gray-600 group-hover:stroke-current dark:stroke-gray-300"
-			>
-				<path
-					d="M9.99981 10.0751V9.99992M17.4688 17.4688C15.889 19.0485 11.2645 16.9853 7.13958 12.8604C3.01467 8.73546 0.951405 4.11091 2.53116 2.53116C4.11091 0.951405 8.73546 3.01467 12.8604 7.13958C16.9853 11.2645 19.0485 15.889 17.4688 17.4688ZM2.53132 17.4688C0.951566 15.8891 3.01483 11.2645 7.13974 7.13963C11.2647 3.01471 15.8892 0.951453 17.469 2.53121C19.0487 4.11096 16.9854 8.73551 12.8605 12.8604C8.73562 16.9853 4.11107 19.0486 2.53132 17.4688Z"
-					strokeWidth="1.5"
-					strokeLinecap="round"
-				/>
-			</svg>
-		),
-	},
-	{
-		href: "https://rmx.as/discord",
-		text: "Join Discord",
-		icon: (
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="24"
-				height="20"
-				viewBox="0 0 24 20"
-				fill="none"
-				className="stroke-gray-600 group-hover:stroke-current dark:stroke-gray-300"
-			>
-				<path
-					d="M15.0686 1.25995L14.5477 1.17423L14.2913 1.63578C14.1754 1.84439 14.0545 2.08275 13.9422 2.31963C12.6461 2.16488 11.3406 2.16505 10.0445 2.32014C9.92822 2.08178 9.80478 1.84975 9.67412 1.62413L9.41449 1.17584L8.90333 1.25995C7.33547 1.51794 5.80717 1.99419 4.37748 2.66939L4.19 2.75793L4.07461 2.93019C1.23864 7.16437 0.46302 11.3053 0.838165 15.3924L0.868838 15.7266L1.13844 15.9264C2.81818 17.1714 4.68053 18.1233 6.68582 18.719L7.18892 18.8684L7.50166 18.4469C7.96179 17.8268 8.36504 17.1824 8.709 16.4944L8.71099 16.4904C10.8645 17.0471 13.128 17.0485 15.2821 16.4947C15.6261 17.1826 16.0293 17.8269 16.4892 18.4469L16.805 18.8725L17.3116 18.717C19.3056 18.105 21.1876 17.1751 22.8559 15.9238L23.1224 15.724L23.1528 15.3923C23.5873 10.6524 22.3579 6.53306 19.8947 2.90714L19.7759 2.73227L19.5833 2.64518C18.1437 1.99439 16.6386 1.51826 15.0686 1.25995ZM16.6074 10.7755L16.6074 10.7756C16.5934 11.6409 16.0212 12.1444 15.4783 12.1444C14.9297 12.1444 14.3493 11.6173 14.3493 10.7877C14.3493 9.94885 14.9378 9.41192 15.4783 9.41192C16.0471 9.41192 16.6209 9.93851 16.6074 10.7755ZM8.49373 12.1444C7.94513 12.1444 7.36471 11.6173 7.36471 10.7877C7.36471 9.94885 7.95323 9.41192 8.49373 9.41192C9.06038 9.41192 9.63892 9.93712 9.6417 10.7815C9.62517 11.6239 9.05462 12.1444 8.49373 12.1444Z"
-					strokeWidth="1.5"
-				/>
-			</svg>
-		),
-	},
-];
