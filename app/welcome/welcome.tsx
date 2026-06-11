@@ -1,25 +1,28 @@
 export function Welcome({ message }: { message: string }) {
 	const featuredProjects = [
 		{
-			title: "Inventory Desk",
+			title: "MD5 Tools",
 			tag: "Web App",
-			description: "Sistem inventori dan laporan stok dengan dashboard real-time untuk tim operasional.",
+			description: "Tools online untuk hashing MD5, desain sederhana, cepat, dan cocok untuk kebutuhan developer.",
 			accent: "from-sky-500 to-blue-600",
 			tech: ["React", "TypeScript", "Tailwind"],
+			url: "https://md5tools.fornubi.my.id",
 		},
 		{
-			title: "POS Mobile Lite",
-			tag: "Mobile App",
-			description: "Aplikasi kasir mobile dengan alur transaksi cepat, offline-ready, dan laporan harian.",
+			title: "Bebe Baby Spa",
+			tag: "Landing Page & Management",
+			description: "Landing page modern dan sistem management untuk usaha bebe baby spa dengan tampilan yang rapi dan mudah dikelola.",
 			accent: "from-slate-600 to-slate-800",
-			tech: ["Flutter", "SQLite", "Firebase"],
+			tech: ["React", "Laravel", "Tailwind"],
+			url: "https://bebe.qzz.io",
 		},
 		{
-			title: "DeskFlow Admin",
-			tag: "Desktop App",
-			description: "Dashboard administrasi desktop untuk manajemen user, role, dan aktivitas internal.",
+			title: "DjangoForge",
+			tag: "Web Tool",
+			description: "Generate Django model, serializer, API, view, and template CRUD operations with ease.",
 			accent: "from-cyan-500 to-indigo-600",
-			tech: ["Tauri", "Rust", "React"],
+			tech: ["Django", "Python", "Bootstrap"],
+			url: "https://djangoforge.fornubi.my.id",
 		},
 	];
 
@@ -177,6 +180,9 @@ export function Welcome({ message }: { message: string }) {
 											<span key={item} className="rounded-full bg-slate-200 px-2.5 py-1 text-xs font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-200">{item}</span>
 										))}
 									</div>
+									{project.url ? (
+										<a className="mt-4 inline-flex rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-700 dark:bg-sky-400 dark:text-slate-950 dark:hover:bg-sky-300" href={project.url} target="_blank" rel="noreferrer">Lihat Project</a>
+									) : null}
 								</div>
 							</article>
 						))}
